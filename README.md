@@ -38,7 +38,7 @@ Cloning first preserves your repository history. Uploading source code does not 
 
 ## Design and attribution
 
-Original design: https://www.figma.com/design/4FgToIFQKhTHCgWTiEu2v5/ECO-VISION-App-Design
+Demo: (https://morio1.github.io/eco-vision/)
 
 See `ATTRIBUTIONS.md` and `src/app/Attributions.md` for third-party notices.
 
