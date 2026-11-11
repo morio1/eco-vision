@@ -1,45 +1,47 @@
-# 🌍 Eco-Vision: Clean Future. Smart Waste.
+# ECO-VISION
 
-> A mobile-first, community-driven waste management and recycling application tailored for urban centers in East and West Africa (Kenya & Nigeria).
+A React and Tailwind CSS prototype for waste collection, reporting, recycling kiosks, and payment screens, exported from Figma.
 
-![Eco-Vision Banner](assets/banner-placeholder.png)
+## Run locally
 
----
+Install Node.js with npm, then run in this folder:
 
-## ✨ Key Features
+```sh
+npm install
+npm run dev
+```
 
-* **Smart Waste Pickups:** A seamless 3-step wizard to schedule organic, plastic, or e-waste collections.
-* **Overflow Reporting:** GPS-enabled incident reporting allowing users to snap photos and drop pins on overflowing community bins with automated ticket generation.
-* **Recycling Kiosks Locator:** Interactive map and directory to find nearby drop-off kiosks with directions and instant SMS alerts.
-* **USSD Companion (*123#):** Built for inclusion—simulates low-bandwidth USSD menu flows and SMS confirmations for feature phone and offline accessibility.
-* **Multi-Country & Localization:** Regional support featuring Kenya (🇰🇪) and Nigeria (🇳🇬) with localization options (English, Swahili, Hausa, Yoruba).
-* **Eco-Impact Tracker:** Real-time statistics tracking personal and community carbon offset metrics, pickups completed, and tons recycled.
+Open the local address printed in the terminal.
 
----
+## Build and preview
 
-## 🎨 Design System & Highlights
-* **Palette:** Deep eco-greens (`#1B5E20`, `#4CAF50`) accented with warm alert tones (`#FFC107`).
-* **UX Philosophy:** Ultra-fast interactions (2-3 taps to any core action) optimized for varying network conditions and device specs.
-* **Micro-Interactions:** Smooth floating transitions, success animations, and full dark-mode support.
+```sh
+npm run build
+npm run preview
+```
 
----
+Production files are generated in `dist/`.
 
-## 🛠️ Tech Stack
-* **Frontend/Mobile:** [Insert your framework e.g., React Native / Flutter / React PWA]
-* **Styling:** [Tailwind CSS / Native Styles]
-* **State Management:** [Context API / Redux / Zustand]
-* **Mapping/Geospatial:** [Leaflet / Google Maps API]
+## Prototype status
 
----
+Login and payment flows are demonstrations, without real authentication or payment services. Collection requests and reports need a backend before live use.
 
-## 🚀 Getting Started
+## Update your existing GitHub repository
 
-### Prerequisites
-Make sure you have installed:
-* [Node.js](https://nodejs.org/) (v16 or higher)
-* npm or yarn
+1. In VS Code, open the Command Palette and select **Git: Clone**. Paste your existing repository URL, choose a separate folder, and open the clone.
+2. Copy this project's files into the clone, replacing corresponding old files. Include `src`, configuration files, `index.html`, `package.json`, `package-lock.json`, `.gitignore`, and documentation. Exclude `node_modules`, `dist`, and `.npm-cache`. Keep the clone's `.git` folder.
+3. Run `npm ci` and `npm run build` in the clone.
+4. Open **Source Control**, review and stage the intended changes, enter `Update ECO-VISION from Figma export`, and commit.
+5. Click **Sync Changes** or **Push**. Sign into GitHub if prompted.
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-username/eco-vision.git](https://github.com/your-username/eco-vision.git)
+Cloning first preserves your repository history. Uploading source code does not automatically configure website hosting.
+
+## Design and attribution
+
+Original design: https://www.figma.com/design/4FgToIFQKhTHCgWTiEu2v5/ECO-VISION-App-Design
+
+See `ATTRIBUTIONS.md` and `src/app/Attributions.md` for third-party notices.
+
+## Functional local update
+
+Pickup and report forms now save records on the current browser, with history pages and report photo attachments (up to three, under 500 KB each). Demo payment transactions persist and receipts can be downloaded or shared. Kiosk buttons open phone, map, and SMS apps using sample directory data. Profile preferences persist. No real money moves, authorities are not notified, and authentication, SMS delivery, verified kiosk data, and translation still require service integration. Browser storage is not shared between devices or users; use only test data.

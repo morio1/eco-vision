@@ -1,0 +1,241 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* ECO-VISION Color Palette */
+  --eco-primary: #4CAF50;
+  --eco-primary-dark: #1B5E20;
+  --eco-primary-light: #A5D6A7;
+  --eco-background: #F8FFF9;
+  --eco-background-light: #E8F5E9;
+  --eco-accent: #FFC107;
+  --eco-secondary: #81C784;
+  
+  --background: #F8FFF9;
+  --foreground: #1B5E20;
+  --card: #ffffff;
+  --card-foreground: #1B5E20;
+  --popover: #ffffff;
+  --popover-foreground: #1B5E20;
+  --primary: #4CAF50;
+  --primary-foreground: #ffffff;
+  --secondary: #E8F5E9;
+  --secondary-foreground: #1B5E20;
+  --muted: #E8F5E9;
+  --muted-foreground: #558B2F;
+  --accent: #FFC107;
+  --accent-foreground: #1B5E20;
+  --destructive: #EF5350;
+  --destructive-foreground: #ffffff;
+  --border: #C8E6C9;
+  --input: #C8E6C9;
+  --input-background: #ffffff;
+  --switch-background: #A5D6A7;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #4CAF50;
+  --chart-1: #4CAF50;
+  --chart-2: #81C784;
+  --chart-3: #A5D6A7;
+  --chart-4: #FFC107;
+  --chart-5: #66BB6A;
+  --radius: 1rem;
+  --sidebar: #F8FFF9;
+  --sidebar-foreground: #1B5E20;
+  --sidebar-primary: #4CAF50;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #E8F5E9;
+  --sidebar-accent-foreground: #1B5E20;
+  --sidebar-border: #C8E6C9;
+  --sidebar-ring: #4CAF50;
+}
+
+.dark {
+  --background: #1B5E20;
+  --foreground: #E8F5E9;
+  --card: #2E7D32;
+  --card-foreground: #E8F5E9;
+  --popover: #2E7D32;
+  --popover-foreground: #E8F5E9;
+  --primary: #66BB6A;
+  --primary-foreground: #1B5E20;
+  --secondary: #388E3C;
+  --secondary-foreground: #E8F5E9;
+  --muted: #388E3C;
+  --muted-foreground: #A5D6A7;
+  --accent: #FFD54F;
+  --accent-foreground: #1B5E20;
+  --destructive: #E57373;
+  --destructive-foreground: #ffffff;
+  --border: #388E3C;
+  --input: #388E3C;
+  --ring: #66BB6A;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #66BB6A;
+  --chart-2: #81C784;
+  --chart-3: #A5D6A7;
+  --chart-4: #FFD54F;
+  --chart-5: #4CAF50;
+  --sidebar: #2E7D32;
+  --sidebar-foreground: #E8F5E9;
+  --sidebar-primary: #66BB6A;
+  --sidebar-primary-foreground: #1B5E20;
+  --sidebar-accent: #388E3C;
+  --sidebar-accent-foreground: #E8F5E9;
+  --sidebar-border: #388E3C;
+  --sidebar-ring: #66BB6A;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+  font-family: var(--font-family);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes pulse-eco {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.animate-pulse-eco {
+  animation: pulse-eco 2s ease-in-out infinite;
+}
+
+html.eco-dark { filter: invert(0.88) hue-rotate(180deg); background: #111; }
+html.eco-dark img { filter: invert(1) hue-rotate(180deg); }
